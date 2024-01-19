@@ -110,10 +110,17 @@ function searchHandler(e) {
 function showSuggestions(results, inputVal) {
   suggestions.innerHTML = "";
 
-  // Used forEach instead of map since not interested in creating a new array, but just adding elements to the DOM
-  results.forEach((val) => {
+  results.forEach((result) => {
     const fruitUI = document.createElement("li");
-    fruitUI.innerText = val;
+    //  This results in a string where the matching part is visually highlighted (bolded) when displayed in the suggestions list.
+    // .replace() replaces matching part of "result" with bolded version
+    const boldedResult = result.replace(
+      // creates reg expression based on inputVal. "G" for global, "i" for case-insensitive
+      new RegExp(inputVal, "gi"),
+      // wraps matched inputVal with strong tag to bold it
+      (match) => `<strong>${match}</strong>`
+    );
+    fruitUI.innerHTML = boldedResult;
     suggestions.append(fruitUI);
   });
   // if inputVal is empty then make sure no fruits are displayed in the UI
