@@ -122,8 +122,10 @@ function showSuggestions(results, inputVal) {
   }
 }
 
+// When user clicks on a fruit from the dropdown it fills the search bar with the fruit name and clears the dropdown menu
 function useSuggestion(e) {
-  // TODO
+  input.value = e.target.innerText;
+  suggestions.innerHTML = "";
 }
 
 input.addEventListener("keyup", searchHandler);
