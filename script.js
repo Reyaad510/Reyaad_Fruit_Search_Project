@@ -108,7 +108,18 @@ function searchHandler(e) {
 
 // Display filtered fruits in the UI
 function showSuggestions(results, inputVal) {
-  console.log(results);
+  suggestions.innerHTML = "";
+
+  // Used forEach instead of map since not interested in creating a new array, but just adding elements to the DOM
+  results.forEach((val) => {
+    const fruitUI = document.createElement("li");
+    fruitUI.innerText = val;
+    suggestions.append(fruitUI);
+  });
+  // if inputVal is empty then make sure no fruits are displayed in the UI
+  if (!inputVal) {
+    suggestions.innerHTML = "";
+  }
 }
 
 function useSuggestion(e) {
