@@ -85,6 +85,8 @@ const fruits = [
 
 function search(str) {
   let results = [];
+  // WHen user input nothing results will be an empty array
+  if (str === "") return (results = []);
   // Filter through fruits array
   fruits.filter((fruit) => {
     // Set user input and fruits to lowercase for easy comparision
