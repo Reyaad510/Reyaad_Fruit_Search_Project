@@ -1,10 +1,10 @@
- * {
- 
+
+
+body {
+  background: linear-gradient(to right, #F9D52F, #E15A01);
+
 }
 
-:focus {
-
-}
 
 body {
   display: flex;
@@ -15,28 +15,52 @@ body {
 }
 
 input {
-
+  padding: 15px;
+  margin: 8px;
+  font-size: 1rem;
+  width: 340px;
+  outline: 0;
+  border-radius: 20px;
+  background-color: rgba(128, 128, 128, 0.2);
+  border: 0;
+  transition: all .2s ease-in-out;
 }
+
+input::placeholder {
+  color:black;
+}
+
+input:hover {
+  transform: scale(1.01);
+}
+
+
 
 .search-container {
   position: relative; 
 
 }
-.search-container input,
-.search-container .suggestions {
-
-}
-.search-container input {
-
-}
 .search-container .suggestions {
   position: absolute; 
-  width: 100%; 
+  left: 2%;
+  width: 96%; 
   max-height: 300px;
+  border-radius: 10px;
   overflow-y: auto;
-  border: 1px solid #ccc;
+  background-color: rgba(128, 128, 128, 0.2);
+}
 
 
+/* This applies css to scrollbar created from .search-contnainern .suggestions */
+.suggestions::-webkit-scrollbar {
+  width: 6px;
+
+}
+
+/* This applies css to scrollbar created from .search-contnainern .suggestions */
+.suggestions::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.5); 
+  border-radius: 10px;
 }
 
 ul {
@@ -44,25 +68,18 @@ ul {
   padding: 0;
   margin: 0;
 }
-ul.has-suggestions {
 
-}
 ul li {
-  padding: 8px;
+  padding: 11px;
   cursor: pointer;
   transition: background-color 0.3s;
+  border-radius: 20px;
 }
 ul li:hover {
-  background-color: #f0f0f0;
+  background-color: rgba(128, 128, 128, 0.2);
+
+
 }
-
-
-
-
-
-
-
-
 
 
 

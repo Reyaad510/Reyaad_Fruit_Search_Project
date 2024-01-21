@@ -115,8 +115,8 @@ function showSuggestions(results, inputVal) {
     //  This results in a string where the matching part is visually highlighted (bolded) when displayed in the suggestions list.
     // .replace() replaces matching part of "result" with bolded version
     const boldedResult = result.replace(
-      // creates reg expression based on inputVal. "G" for global, "i" for case-insensitive
-      new RegExp(inputVal, "gi"),
+      // creates reg expression based on inputVal and bolds first letter only that matches. "i" for case-insensitive
+      new RegExp(inputVal, "i"),
       // wraps matched inputVal with strong tag to bold it
       (match) => `<strong>${match}</strong>`
     );
